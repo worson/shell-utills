@@ -1,0 +1,5 @@
+CUR_PATH=`pwd`
+fileName=$1_`date "+%Y-%m-%d-%H-%M-%S"`".top"
+REAL_FILE_NAME=$CUR_PATH/$fileName
+echo "crete top file "$REAL_FILE_NAME"   ..."
+adb shell top   > "$REAL_FILE_NAME"

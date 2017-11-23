@@ -1,0 +1,5 @@
+CUR_PATH=`pwd`
+fileName=$1_`date "+%Y-%m-%d-%H-%M-%S"`".log"
+REAL_FILE_NAME=$CUR_PATH/$fileName
+echo "crete log file "$REAL_FILE_NAME"   ..."
+adb logcat -v threadtime  > "$REAL_FILE_NAME"

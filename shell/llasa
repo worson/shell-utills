@@ -1,0 +1,1 @@
+adb logcat -v threadtime | grep -v "result.bin" | grep -v "aec.pcm" |grep -v "recorder.pcm" | grep -v "vad.speech" | grep -v "vad.volume"  |grep -v "channel separated"  | grep -v "keepalive" | grep -v "tts.pcm" | grep "lasa"

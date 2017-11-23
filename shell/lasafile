@@ -1,0 +1,4 @@
+CUR_PATH=`pwd`
+fileName=$1
+REAL_FILE_NAME=$CUR_PATH/$fileName
+cat $REAL_FILE_NAME | grep -v "result.bin" | grep -v "aec.pcm" |grep -v "recorder.pcm" | grep -v "vad.speech" | grep -v "vad.volume"  |grep -v "channel separated"  | grep -v "keepalive" | grep -v "tts.pcm" | grep "lasa"

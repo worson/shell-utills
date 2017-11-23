@@ -1,0 +1,20 @@
+echo "uninstall aios app ..."
+adb uninstall com.aispeech.aios
+adb uninstall com.aispeech.aios.adapter
+adb uninstall com.aispeech.aios.wechat
+adb uninstall com.aispeech.aios.bridge
+
+adb root
+sleep 1
+adb remount
+sleep 1
+adb push app/aios-bridge.apk /system/app
+adb push app/aios-daemon.apk /system/app
+adb push app/aios-adapter.apk /system/app
+adb push app/aios-wechat.apk /system/app
+
+adb push app-lib/lib/armeabi/. /system/lib
+
+adb shell rm -rf /data/data/com.aispeech.aios*
+
+adb shell sync

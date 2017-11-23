@@ -1,0 +1,2 @@
+adb shell dumpsys package $1 | grep versionCode
+adb shell dumpsys package $1 | grep versionName
