@@ -1,0 +1,1 @@
+alias lyra="lyra.py $*"
