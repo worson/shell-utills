@@ -12,7 +12,14 @@ IS_DEBUG=True
 def execute(para):
     print "execute:%s" %(para)
     return os.system(para)
-
+def executes(paras):
+    print "execute:%s" %(paras)
+    cmd=''
+    for c in paras:
+        cmd=cmd+' \n '+c;
+    return os.system(cmd)
+def modulePath(rootpath,name):
+    return "%s/blocks/lyra-%s" %(rootpath,name)
 # print "lyrastart  "+argv
 if len(sys.argv) >= 1:
     paras={}
@@ -23,7 +30,7 @@ if len(sys.argv) >= 1:
     argv=[]
     for i in range(0,len(sys.argv)):
         v=sys.argv[i]
-        if v!='-G':
+        if v!='-G' and v!='-i':
             argv.append(v)
     if IS_DEBUG:
         print argv
@@ -38,7 +45,8 @@ if len(sys.argv) >= 1:
 
     if IS_DEBUG:
         print "input para: action=%s,val=%s,val2=%s,val3=%s" %(action,val,val2,val3)
-    configpath='../../config/lyra.json'
+    shpath=os.path.dirname(argv[0])
+    configpath=shpath+'/'+'../../config/lyra.json'
     cfgstr=open(configpath).read()
     cfg=json.loads(cfgstr)
     rootpath=cfg['root_path']
@@ -49,7 +57,11 @@ if len(sys.argv) >= 1:
         print cfg[val]
         if val=='pkg':
             print 
-    
+    if action=='test':
+        cmds=[]
+        cmds.append('ls /')
+        cmds.append('ls ~')
+        executes(cmds)
     if action=='cd':
         if val==None: 
             execute("cd %s" %(rootpath))
@@ -60,34 +72,36 @@ if len(sys.argv) >= 1:
             execute("ls %s" %(rootpath))
         elif  val=='build': 
             execute("ls %s | grep 'lyra'" %(rootpath))
+        elif val in  innerapps:
+            execute("ls %s" %(modulePath(rootpath,val)))
+    if action=='rm':
+        if val==None: 
+            execute("ls %s" %(rootpath))
+        elif val in innerapps:
+            execute("rm -rf %s/build" %(modulePath(rootpath,val)))
     if action=='ps':
         if val==None: 
             execute("adb shell ps | grep 'aispeech'")
-    if action=='start':
+    if action=='build':
+        if val==None: 
+            print 'build all'
+            cmds=[]
+            buldsh=rootpath+"/"+cfg["build_tool"]
+            cmds.append("cd %s" %(os.path.dirname(buldsh)))
+            cmds.append("sh %s" %(buldsh))
+            executes(cmds)
+    if action=='assemble':
         if val==None:
             execute("adb shell am force-stop ")
         else:
-            execute("adb shell am start -n %s" %(cfg[val]['mainactivity']))
-        print "start app: %s" %(val)
-    if action=='stop':
-        print "stop app: %s" %(val)
-        if val==None:
-            execute("adb shell am force-stop ")
-        else:
-            execute("adb shell am force-stop %s" %(cfg[val]['pkg']))
-    if action=='kill':
-        print "stop app: %s" %(val)
-        if val==None:
-            execute("adb shell am force-stop ")
-        else:
-            execute("adb shell am force-stop %s" %(cfg[val]['pkg']))
-    
-    if action=='restart':
-        print "restart app: %s" %(val)
-    if action=='install':
-        print "install app: %s" %(val)
-        execute("gradle -p %s installDebug" %('/Users/wangshengxing/project/geek/WaterMonitor/app'))
-#
+            cmds=[]
+            buildfile="%s/blocks/lyra-%s/build.sh" %(rootpath,val)
+            filepath=os.path.dirname(buildfile)
+            cmds.append("cd %s" %(filepath))
+            cmds.append("pwd")
+            cmds.append("sh %s/blocks/lyra-%s/build.sh" %(rootpath,val))
+            executes(cmds)
+
 
 # execute("adb shell ps")
 
