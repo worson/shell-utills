@@ -27,7 +27,6 @@ alias m="move"
 alias n="touch"
 alias o="open"
 alias of="open `pwd`"
-unalias p
 alias p= pwd
 alias py="python2.7"
 alias q=""
@@ -36,7 +35,7 @@ alias s="subl"
 # alias t= tail
 alias u="unalias"
 alias v="vim"
-alias w="where"
+alias w="which"
 alias x="xargs"
 alias y="where"
 # alias z=列举最常用的工作目录

@@ -74,12 +74,20 @@ if len(sys.argv) >= 1:
             execute("ls %s | grep 'lyra'" %(rootpath))
         elif val in  innerapps:
             execute("ls %s" %(modulePath(rootpath,val)))
+    if action=='pwd':
+        if val in innerapps:
+            execute("adb shell pm -p %s" %(cfg[val]['pkg']))
     if action=='rm':
         if val==None: 
             execute("ls %s" %(rootpath))
         elif val in innerapps:
             execute("rm -rf %s/build" %(modulePath(rootpath,val)))
-    if action=='ps':
+    if action=='stop':
+        if val in innerapps:
+            execute("adb shell am force-stop %s" %(cfg[val]['pkg'])) 
+    if action=='uninstall':
+        if val in innerapps:
+            execute("adb shell am force-stop %s" %(cfg[val]['pkg']))    if action=='ps':
         if val==None: 
             execute("adb shell ps | grep 'aispeech'")
     if action=='build':

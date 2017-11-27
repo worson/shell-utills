@@ -1,8 +1,13 @@
-sourcepath="/Users/wangshengxing/tool/shell-config"
+
 source  $sourcepath/adb-sh.cfg
+source $sourcepath/adb-sh.cfg
 source  $sourcepath/onekey-sh.sh
 source  $sourcepath/sign-apk.sh
-source  $sourcepath/wine-app.sh
+
+
+
+# lyra
+source  $sourcepath/lyra/lyra.sh
 
 # Android
 source $sourcepath/android/android-shot.sh
