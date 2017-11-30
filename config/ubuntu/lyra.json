@@ -1,0 +1,12 @@
+{
+    "root_path":"/Users/wangshengxing/project/aispeech/lyra",
+    "build_tool":"./tools/build/build-task.sh",
+    "aios":{
+            "pkg":"com.aispeech.aios"
+    },
+    "launcher":{
+        "pkg":"com.aispeech.launcher",
+        "mainactivity":"com.aispeech.launcher/com.aispeech.lyra.adapter.activity.LyraActivity"
+
+    }
+}

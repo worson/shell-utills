@@ -1,0 +1,17 @@
+{
+    "root_path":"/Users/wangshengxing/project/aispeech/lyra",
+    "build_tool":"./tools/build/build-task.sh",
+    "signs":{
+        "vst":{
+            "sh":"java -jar  /Users/wangshengxing/aispeech/develop-doc/sign/yzyl/signapk.jar   /Users/wangshengxing/aispeech/develop-doc/sign/yzyl/platform.x509.pem   /Users/wangshengxing/aispeech/develop-doc/sign/yzyl/platform.pk8 "
+        }  
+    },
+    "aios":{
+            "pkg":"com.aispeech.aios"
+    },
+    "launcher":{
+        "pkg":"com.aispeech.launcher",
+        "mainactivity":"com.aispeech.launcher/com.aispeech.lyra.adapter.activity.LyraActivity"
+
+    }
+}

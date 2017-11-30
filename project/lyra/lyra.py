@@ -8,16 +8,21 @@ import json
 
 
 IS_DEBUG=True
-
+def cmd(para):
+    print "execute:%s" %(para)
+    #return os.system(para)
+    return os.popen(para).readlines()
 def execute(para):
     print "execute:%s" %(para)
     return os.system(para)
+    #return os.popen(para).readlines()
 def executes(paras):
     print "execute:%s" %(paras)
     cmd=''
     for c in paras:
         cmd=cmd+' \n '+c;
     return os.system(cmd)
+    #return os.popen(paras).readlines()
 def modulePath(rootpath,name):
     return "%s/blocks/lyra-%s" %(rootpath,name)
 # print "lyrastart  "+argv
@@ -46,7 +51,10 @@ if len(sys.argv) >= 1:
     if IS_DEBUG:
         print "input para: action=%s,val=%s,val2=%s,val3=%s" %(action,val,val2,val3)
     shpath=os.path.dirname(argv[0])
-    configpath=shpath+'/'+'../../config/lyra.json'
+    macos=("Darwin" in cmd('uname')[0])
+    #print "macos " macos 
+    osname=('mac' if macos else 'ubuntu')
+    configpath=shpath+'/'+"../../config/%s/lyra.json"%(osname)
     cfgstr=open(configpath).read()
     cfg=json.loads(cfgstr)
     rootpath=cfg['root_path']
@@ -87,9 +95,19 @@ if len(sys.argv) >= 1:
             execute("adb shell am force-stop %s" %(cfg[val]['pkg'])) 
     if action=='uninstall':
         if val in innerapps:
-            execute("adb shell am force-stop %s" %(cfg[val]['pkg']))    if action=='ps':
+            execute("adb shell am force-stop %s" %(cfg[val]['pkg']))    
+    if action=='ps':
         if val==None: 
             execute("adb shell ps | grep 'aispeech'")
+    if action=='sign':
+        if val==None: 
+            print cmd("uname")
+        else :
+            sh=cfg["signs"][val]['sh']
+            dst=os.path.splitext(val2)
+            signsh="%s %s %s"%(sh,val2,dst[0]+"-signed"+dst[1])
+            execute(signsh)
+            #print signsh
     if action=='build':
         if val==None: 
             print 'build all'
