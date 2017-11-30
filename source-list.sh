@@ -24,8 +24,10 @@ VIM_PATH="/Applications/MacVim.app/Contents/bin"
 G_CUSTOM_PATH="$sourcepath/android" 
 G_CUSTOM_PATH=$G_CUSTOM_PATH:"$sourcepath/project/lyra":$VIM_PATH:$SYSTEM_TOOL_PATH
 
-CURPATH=`pwd` SHELL_PATH=$CURPATH"/shell" # echo "current path is "$CURPATH
+CURPATH=$sourcepath
+SHELL_PATH=$CURPATH"/shell" 
+# echo "current path is "$CURPATH
 # export PATH=$PATH:$SHELL_PATH
 # echo "PATH is "$PATH
 
-PATH=$PATH:$G_CUSTOM_PATH
+PATH=$PATH:$SHELL_PATH:$G_CUSTOM_PATH

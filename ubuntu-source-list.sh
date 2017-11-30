@@ -1,5 +1,5 @@
 #!/bin/bash
-sourcepath="/home/share/shell-utills"
+sourcepath=/home/share/shell-utills/
 source  $sourcepath/ubuntu/app-list.sh
 source  $sourcepath/ubuntu/ev.sh
 
