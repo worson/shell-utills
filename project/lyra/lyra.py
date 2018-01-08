@@ -94,7 +94,11 @@ if len(sys.argv) >= 1:
         if val in innerapps:
             execute("adb shell am force-stop %s" %(cfg[val]['pkg'])) 
     if action=='uninstall':
-        if val in innerapps:
+        if val==None:
+            print "uninstall all lyra app ..."
+            #execute("sh %s"%(os.path.abspath("./lyrauninstall.sh")))
+            execute("sh %s"%(shpath+"/"+"lyrauninstall.sh"))
+        elif val in innerapps:
             execute("adb shell am force-stop %s" %(cfg[val]['pkg']))    
     if action=='ps':
         if val==None: 

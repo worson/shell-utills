@@ -2,13 +2,15 @@ alias a="alias "
 alias b="pbcopy"
 alias bd=". bd -si"
 alias bs="brew search --desc "
+alias bi="brew install"
 alias bin="brew install"
-alias c="cat"
+alias c="ccat"
 alias cl="clear"
 #alias d=	当前工作目录
 alias e="echo"
 alias f="find"
 alias fname="find . -name '*' | grep $* "
+alias xfname="mdfind -onlyin . -name"
 # 搜索文件内容
 alias fs='_gfile(){ grep $2 $1 }; _gfile $1 $2'
 
@@ -22,8 +24,9 @@ alias l="ls"
 alias log="adb logcat -v threadtime| grep --color $*"
 alias logp='_logp(){ echo 111}; _logp() $1'
 alias lspath='lspath.py'
-alias lr="ls -a | grep" 
+alias lr="ls -a | grep"
 alias m="move"
+alias mux="tmuxinator"
 alias n="touch"
 alias o="open"
 alias of="open `pwd`"
