@@ -18,15 +18,17 @@ source $sourcepath/project/project-list.sh
 
 # system
 source $sourcepath/system/system-list.sh
+# plugin
+source $sourcepath/plugin/docker/docker-shot.sh
 
 # PATH
 SYSTEM_TOOL_PATH=$sourcepath/system
 VIM_PATH="/Applications/MacVim.app/Contents/bin"
-G_CUSTOM_PATH="$sourcepath/android" 
-G_CUSTOM_PATH=$G_CUSTOM_PATH:"$sourcepath/project/dui":"$sourcepath/project/lyra":$VIM_PATH:$SYSTEM_TOOL_PATH
+G_CUSTOM_PATH="$sourcepath/android"
+G_CUSTOM_PATH=$G_CUSTOM_PATH:"$sourcepath/project/":"$sourcepath/project/dui":"$sourcepath/project/lyra":$VIM_PATH:$SYSTEM_TOOL_PATH
 
 CURPATH=$sourcepath
-SHELL_PATH=$CURPATH"/shell" 
+SHELL_PATH=$CURPATH"/shell"
 # echo "current path is "$CURPATH
 # export PATH=$PATH:$SHELL_PATH
 # echo "PATH is "$PATH

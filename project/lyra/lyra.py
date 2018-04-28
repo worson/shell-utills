@@ -52,7 +52,7 @@ if len(sys.argv) >= 1:
         print "input para: action=%s,val=%s,val2=%s,val3=%s" %(action,val,val2,val3)
     shpath=os.path.dirname(argv[0])
     macos=("Darwin" in cmd('uname')[0])
-    #print "macos " macos 
+    #print "macos " macos
     osname=('mac' if macos else 'ubuntu')
     configpath=shpath+'/'+"../../config/%s/lyra.json"%(osname)
     cfgstr=open(configpath).read()
@@ -64,21 +64,21 @@ if len(sys.argv) >= 1:
         print cfg
         print cfg[val]
         if val=='pkg':
-            print 
+            print
     if action=='test':
         cmds=[]
         cmds.append('ls /')
         cmds.append('ls ~')
         executes(cmds)
     if action=='cd':
-        if val==None: 
+        if val==None:
             execute("cd %s" %(rootpath))
-        elif  val=='build': 
+        elif  val=='build':
             execute("cd %s | grep 'lyra'" %(rootpath))
     if action=='ls':
-        if val==None: 
+        if val==None:
             execute("ls %s" %(rootpath))
-        elif  val=='build': 
+        elif  val=='build':
             execute("ls %s | grep 'lyra'" %(rootpath))
         elif val in  innerapps:
             execute("ls %s" %(modulePath(rootpath,val)))
@@ -86,25 +86,42 @@ if len(sys.argv) >= 1:
         if val in innerapps:
             execute("adb shell pm -p %s" %(cfg[val]['pkg']))
     if action=='rm':
-        if val==None: 
+        if val==None:
             execute("ls %s" %(rootpath))
         elif val in innerapps:
             execute("rm -rf %s/build" %(modulePath(rootpath,val)))
     if action=='stop':
         if val in innerapps:
-            execute("adb shell am force-stop %s" %(cfg[val]['pkg'])) 
+            execute("adb shell am force-stop %s" %(cfg[val]['pkg']))
+    elif action=='install':
+        if val==None:
+            for appname in innerapps:
+                execute("adb push %s  %s" %(rootpath+"/"+cfg[appname]['debugapk'],"/data/local/tmp/"+cfg[appname]['pkg']))
+                execute("adb shell pm install -t -r  %s" %("/data/local/tmp/"+cfg[appname]['pkg']))
+                time.sleep(2)
+        elif val in innerapps:
+            appname=val
+            srcapp=rootpath+"/"+cfg[appname]['debugapk']
+            if val2 !=None :
+                srcapp=val2
+            execute("adb push %s  %s" %(srcapp,"/data/local/tmp/"+cfg[appname]['pkg']))
+            execute("adb shell pm install -t -r  %s" %("/data/local/tmp/"+cfg[appname]['pkg']))
+        elif val!=None:
+            tname="/data/local/tmp/tmpapk/common.apk"
+            execute("adb push %s  %s" %(val,tname))
+            execute("adb shell pm install -t -r  %s" %(tname))
     if action=='uninstall':
         if val==None:
             print "uninstall all lyra app ..."
             #execute("sh %s"%(os.path.abspath("./lyrauninstall.sh")))
             execute("sh %s"%(shpath+"/"+"lyrauninstall.sh"))
         elif val in innerapps:
-            execute("adb shell am force-stop %s" %(cfg[val]['pkg']))    
+            execute("adb shell am force-stop %s" %(cfg[val]['pkg']))
     if action=='ps':
-        if val==None: 
+        if val==None:
             execute("adb shell ps | grep 'aispeech'")
     if action=='sign':
-        if val==None: 
+        if val==None:
             print cmd("uname")
         else :
             sh=cfg["signs"][val]['sh']
@@ -113,7 +130,7 @@ if len(sys.argv) >= 1:
             execute(signsh)
             #print signsh
     if action=='build':
-        if val==None: 
+        if val==None:
             print 'build all'
             cmds=[]
             buldsh=rootpath+"/"+cfg["build_tool"]
