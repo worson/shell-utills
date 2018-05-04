@@ -1,0 +1,37 @@
+{
+    "root_path":"/home/sen/project/aispeech/lyra-auto",
+    "build_tool":"./tools/build/build-task.sh",
+    "apps":[
+      "launcher",
+      "daemon",
+      "wechat"
+    ],
+    "domain":[
+      "wechat",
+      "daemon"
+    ],
+    "duiApis":{
+      "wechat":"/Users/wangshengxing/project/aispeech/lyra-matrix/lyra-auto/lyra-daemon/app/src/main/assets/modules/module_wechat.dui"
+    },
+
+    "signs":{
+        "vst":{
+            "sh":"java -jar  /Users/wangshengxing/aispeech/develop-doc/sign/yzyl/signapk.jar   /Users/wangshengxing/aispeech/develop-doc/sign/yzyl/platform.x509.pem   /Users/wangshengxing/aispeech/develop-doc/sign/yzyl/platform.pk8 "
+        }
+    },
+    "daemon":{
+            "debugapk":"./show-case-demo/build/outputs/apk/debug/show-case-demo-debug.apk",
+            "pkg":"com.aispeech.aios"
+    },
+    "launcher":{
+        "debugapk":"./show-case-demo/build/outputs/apk/debug/show-case-demo-debug.apk",
+        "pkg":"com.aispeech.launcher",
+        "mainactivity":"com.aispeech.launcher/com.aispeech.lyra.adapter.activity.LyraActivity"
+
+    },
+    "dialog":{
+            "debugapk":"./car/build/outputs/apk/debug/car-debug.apk",
+            "pkg":"com.aispeech.dui.car",
+            "mainactivity":"com.aispeech.dui.car/.ui.activity.LauncherActivity_"
+    }
+}
