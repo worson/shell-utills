@@ -12,7 +12,7 @@ alias f="find"
 alias fname="find . -name '*' | grep $* "
 alias xfname="mdfind -onlyin . -name"
 # 搜索文件内容
-alias fs='_gfile(){ grep $2 $1 }; _gfile $1 $2'
+alias fs='_gfile(){ grep -nE $2 $1 }; _gfile $1 $2'
 
 # alias g=	git
 # alias h= 	历史记录
@@ -21,7 +21,7 @@ alias i=""
 # alias j=  autojump
 alias k=""
 alias l="ls"
-alias log="adb logcat -v threadtime| grep --color $*"
+alias log="adb logcat -v threadtime| grep -E --color $*"
 alias logp='_logp(){ echo 111}; _logp() $1'
 alias lspath='lspath.py'
 alias lr="ls -a | grep"

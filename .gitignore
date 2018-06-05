@@ -3,4 +3,5 @@
 .tags1
 .tags
 *.pyc
+.idea/
 

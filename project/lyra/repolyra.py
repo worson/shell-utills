@@ -11,27 +11,32 @@ import sys
 import platform
 import json
 
-IS_DEBUG=True
-def cmd(para):
-    print "execute:%s" %(para)
-    #return os.system(para)
-    return os.popen(para).readlines()
-def execute(para):
-    print "execute:%s" %(para)
-    return os.system(para)
-    #return os.popen(para).readlines()
-def executes(paras):
-    print "execute:%s" %(paras)
-    cmd=''
-    for c in paras:
-        cmd=cmd+' \n '+c;
-    return os.system(cmd)
+IS_DEBUG = True
 
+
+def cmd(para):
+    print "execute:%s" % (para)
+    # return os.system(para)
+    return os.popen(para).readlines()
+
+
+def execute(para):
+    print "execute:%s" % (para)
+    return os.system(para)
+    # return os.popen(para).readlines()
+
+
+def executes(paras):
+    print "execute:%s" % (paras)
+    cmd = ''
+    for c in paras:
+        cmd = cmd + ' \n ' + c;
+    return os.system(cmd)
 
 
 # parse manifest.xml
 class xmlUtil:
-    def __init__(self,xmlName):
+    def __init__(self, xmlName):
         self.xmlName = xmlName
         if not os.path.isfile(self.xmlName):
             print 'Manifest.xml is not exists, please check it'
@@ -83,9 +88,9 @@ class xmlUtil:
 
 # git clone submodule
 class gitUtil():
-    def __init__(self,rootpath):
+    def __init__(self, rootpath):
         # self.pwd = os.getcwd().replace("\n", "")
-        self.pwd=rootpath
+        self.pwd = rootpath
         print self.pwd
         pass
 
@@ -130,7 +135,7 @@ class gitUtil():
         print 'ls is complete, enjoy of coding...'
         pass
 
-    def cmdSubmodule(self, appInfos,cmd):
+    def cmdSubmodule(self, appInfos, cmd):
         for i in range(len(appInfos)):
             pwd = self.pwd + '/' + appInfos[i]["path"]
             if os.path.exists(pwd):
@@ -148,41 +153,41 @@ def usage():
 
 
 if __name__ == '__main__':
-    paras={}
-    action=None
-    val=None
-    val2=None
-    val3=None
-    argv=[]
-    for i in range(0,len(sys.argv)):
-        v=sys.argv[i]
-        if v!='-G' and v!='-i':
+    paras = {}
+    action = None
+    val = None
+    val2 = None
+    val3 = None
+    argv = []
+    for i in range(0, len(sys.argv)):
+        v = sys.argv[i]
+        if v != '-G' and v != '-i':
             argv.append(v)
     if IS_DEBUG:
         print argv
-    if(len(argv)>1):
-        action=argv[1]
-    if(len(argv)>2):
-        val=argv[2]
-    if(len(argv)>3):
-        val2=argv[3]
-    if(len(argv)>4):
-        val3=argv[4]
+    if (len(argv) > 1):
+        action = argv[1]
+    if (len(argv) > 2):
+        val = argv[2]
+    if (len(argv) > 3):
+        val2 = argv[3]
+    if (len(argv) > 4):
+        val3 = argv[4]
 
     if IS_DEBUG:
-        print "input para: action=%s,val=%s,val2=%s,val3=%s" %(action,val,val2,val3)
-    shpath=os.path.dirname(argv[0])
-    macos=("Darwin" in cmd('uname')[0])
-    #print "macos " macos
-    osname=('mac' if macos else 'ubuntu')
-    configpath=shpath+'/'+"../../config/%s/lyra_auto.json"%(osname)
-    cfgstr=open(configpath).read()
-    cfg=json.loads(cfgstr)
-    rootpath=cfg['root_path']
-    innerapps=['aios','launcher','wechat','music','dialog']
+        print "input para: action=%s,val=%s,val2=%s,val3=%s" % (action, val, val2, val3)
+    shpath = os.path.dirname(argv[0])
+    macos = ("Darwin" in cmd('uname')[0])
+    # print "macos " macos
+    osname = ('mac' if macos else 'ubuntu')
+    configpath = shpath + '/' + "../../config/%s/lyra_auto.json" % (osname)
+    cfgstr = open(configpath).read()
+    cfg = json.loads(cfgstr)
+    rootpath = cfg['root_path']
+    innerapps = ['aios', 'launcher', 'wechat', 'music', 'dialog']
 
     if len(sys.argv) >= 1:
-        xmlUtil = xmlUtil(rootpath+"/manifest.xml")
+        xmlUtil = xmlUtil(rootpath + "/manifest.xml")
         appInfos = xmlUtil.parseXml()
 
         gitUtil = gitUtil(rootpath)
@@ -194,7 +199,7 @@ if __name__ == '__main__':
             gitUtil.lsSubmodule(appInfos)
         elif action == "cmd":
             print "exe cmd"
-            gitUtil.cmdSubmodule(appInfos,val)
+            gitUtil.cmdSubmodule(appInfos, val)
         elif sys.argv[1] == "help":
             usage()
         else:
