@@ -7,4 +7,3 @@ TMP_ANDROID_TOOLS="/home/wangshengxing/Android/Sdk/platform-tools"
 
 
 PATH=$PATH:$TMP_ANDROID_TOOLS
-echo 'ok'
