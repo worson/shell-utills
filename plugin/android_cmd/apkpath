@@ -1,0 +1,4 @@
+pkg=`afront`
+echo 'current pkg is '$pkg
+apkpath=`adb shell pm -p $pkg`
+echo 'front apk path:'$apkpath

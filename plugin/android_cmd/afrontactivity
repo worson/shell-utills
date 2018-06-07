@@ -1,0 +1,2 @@
+# 当前显示的acitivity 
+adb shell dumpsys activity activities | grep mFocusedActivity |awk '{print $4}'
