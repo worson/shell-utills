@@ -37,7 +37,7 @@ alias ssetting="adb shell am start com.aispeech.aios/.SettingActivity"
 alias sbridge="adb shell am start com.aispeech.aios.bridge/.activity.MainActivity"
 
 # aispeech log
-#alias lasa="adb logcat -v threadtime | grep lasa" 
+#alias lasa="adb logcat -v threadtime | grep lasa"
 #alias aios="adb logcat -v threadtime | grep aios"
 
 
