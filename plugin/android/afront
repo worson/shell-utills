@@ -1,4 +1,0 @@
-# adb shell dumpsys activity activities | grep mFocusedActivity
-# mFocusedActivity: ActivityRecord{f969d70 u0 com.android.gallery3d/com.huawei.gallery.app.GalleryMain t4}
-
-adb shell dumpsys activity activities | grep mFocusedActivity |awk '{print $4}' | awk -F / '{print $1}'

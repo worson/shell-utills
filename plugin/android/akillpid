@@ -1,2 +1,0 @@
-# 杀死指定的PID 应用
-adb shell kill `apid $1`
