@@ -7,3 +7,11 @@ TMP_ANDROID_TOOLS="/home/wangshengxing/Android/Sdk/platform-tools"
 
 
 PATH=$PATH:$TMP_ANDROID_TOOLS
+
+T_UBUNTU_PATH=$CFG_ROOT_PATH'/ubuntu/'
+
+source  $T_UBUNTU_PATH'app/app-list.sh'
+
+source $T_UBUNTU_PATH'alias/ubuntu_alias.sh'
+
+echo 'ok'

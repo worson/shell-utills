@@ -1,8 +1,8 @@
-alias alog="adb logcat -v threadtime "
-alias alogr="adb logcat -v threadtime| grep --color -E "
+
 alias acat="adb shell cat "
 alias aremount="adb remount"
 alias ashot="adb exec-out screencap -p > "
+alias ashotfile="t_file_name=~/Downloads/android_screen/picture_`date "+%Y_%m_%d_%H___%M_%S"`.png;adb exec-out screencap -p > $t_file_name; open $t_file_name "
 alias adevices="adb device"
 alias adate="adb shell date"
 alias akill="adb shell kill "
@@ -37,7 +37,7 @@ alias ssetting="adb shell am start com.aispeech.aios/.SettingActivity"
 alias sbridge="adb shell am start com.aispeech.aios.bridge/.activity.MainActivity"
 
 # aispeech log
-#alias lasa="adb logcat -v threadtime | grep lasa" 
+#alias lasa="adb logcat -v threadtime | grep lasa"
 #alias aios="adb logcat -v threadtime | grep aios"
 
 
