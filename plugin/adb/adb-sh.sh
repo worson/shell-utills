@@ -2,7 +2,7 @@
 alias acat="adb shell cat "
 alias aremount="adb remount"
 alias ashot="adb exec-out screencap -p > "
-alias ashotfile="t_file_name=~/Downloads/android_screen/picture_`date "+%Y_%m_%d_%H___%M_%S"`.png;adb exec-out screencap -p > $t_file_name; open $t_file_name "
+alias ashotfile="_ashotfile(){ t_file_name=~/Downloads/android_screen/picture_`date "+%Y_%m_%d_%H___%M_%S"`.png ; adb exec-out screencap -p > $t_file_name ; open $t_file_name ;}; _ashotfile"
 alias adevices="adb device"
 alias adate="adb shell date"
 alias akill="adb shell kill "

@@ -12,5 +12,6 @@ export EDITOR=vim
 T_MAC_PATH=$CFG_ROOT_PATH'/mac/'
 
 source $T_MAC_PATH'alias/mac-alias.sh'
+source $T_MAC_PATH'alias/ssh-alias.sh'
 source $T_MAC_PATH'app/app-list.sh'
 source $T_MAC_PATH'app/wine-app.sh'

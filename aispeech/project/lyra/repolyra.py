@@ -180,7 +180,7 @@ if __name__ == '__main__':
     macos = ("Darwin" in cmd('uname')[0])
     # print "macos " macos
     osname = ('mac' if macos else 'ubuntu')
-    configpath = shpath + '/' + "../../config/%s/lyra_auto.json" % (osname)
+    configpath = shpath + '/' + "../../../config/%s/lyra_auto.json" % (osname)
     cfgstr = open(configpath).read()
     cfg = json.loads(cfgstr)
     rootpath = cfg['root_path']

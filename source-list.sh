@@ -4,6 +4,8 @@ source $sourcepath/system/system-list.sh
 # plugin
 source $sourcepath/plugin/plugin-list.sh
 
+source $sourcepath/aispeech/aispeech-list.sh
+
 
 
 
