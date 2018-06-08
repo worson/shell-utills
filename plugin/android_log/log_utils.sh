@@ -1,6 +1,12 @@
+CFG_ALOG_PATH=$CFG_PLUGIN_PATH"/android_log"
+export CFG_ALOG_PATH
+
+#shell tools
+alias alogfile="sh $CFG_ALOG_PATH/alogfile.sh"
+alias alogview="sh $CFG_ALOG_PATH/alogview.sh"
+
+# alias
 alias alog="adb logcat -v threadtime "
-alias alogfile=" t_file=~/Downloads/auto_log/log_auto_`date +%Y_%m_%d____%H_%M_%S`.txt && echo $t_file && touch echo $t_file && adb logcat -v threadtime > $t_file "
-alias alogview=" t_file=~/Downloads/auto_log/log_auto_`date +%Y_%m_%d____%H_%M_%S`.txt && echo $t_file && touch echo $t_file && adb logcat -v threadtime > $t_file && vim $t_file"
 alias alogls="ls ~/Downloads/auto_log/"
 alias alogr="adb logcat -v threadtime| grep --color -E "
 alias log="adb logcat -v threadtime| grep -E --color $*"
