@@ -1,5 +1,5 @@
 {
-    "root_path":"/home/sen/project/aispeech/lyra-auto",
+    "root_path":"/home/wangshengxing/project/aispeech/lyra-matrix/lyra-auto",
     "build_tool":"./tools/build/build-task.sh",
     "apps":[
       "launcher",

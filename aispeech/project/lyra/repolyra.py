@@ -141,6 +141,7 @@ class gitUtil():
             if os.path.exists(pwd):
                 os.chdir(pwd)
                 print os.getcwd().replace("\n", "")
+                print "execute cmd "+cmd
                 os.system(cmd)
         pass
 
@@ -181,12 +182,14 @@ if __name__ == '__main__':
     # print "macos " macos
     osname = ('mac' if macos else 'ubuntu')
     configpath = shpath + '/' + "../../../config/%s/lyra_auto.json" % (osname)
+    print configpath
     cfgstr = open(configpath).read()
     cfg = json.loads(cfgstr)
     rootpath = cfg['root_path']
     innerapps = ['aios', 'launcher', 'wechat', 'music', 'dialog']
 
     if len(sys.argv) >= 1:
+        print rootpath
         xmlUtil = xmlUtil(rootpath + "/manifest.xml")
         appInfos = xmlUtil.parseXml()
 
