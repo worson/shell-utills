@@ -9,7 +9,7 @@ alias f="find"
 alias fname="find . -name '*' | grep $* "
 
 # 搜索文件内容
-alias fs='_gfile(){ grep -nE $2 $1 }; _gfile $1 $2'
+alias fs='_gfile(){ grep -E $2 $1 }; _gfile $1 $2'
 
 # alias g=	git
 # alias h= 	历史记录

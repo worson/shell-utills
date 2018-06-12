@@ -1,3 +1,6 @@
+#cinfig
+CFG_BASH="zsh"
+export CFG_BASH
 
 # system
 source $sourcepath/system/system-list.sh
@@ -5,6 +8,8 @@ source $sourcepath/system/system-list.sh
 source $sourcepath/plugin/plugin-list.sh
 
 source $sourcepath/aispeech/aispeech-list.sh
+
+
 
 
 
