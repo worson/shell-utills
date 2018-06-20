@@ -11,3 +11,6 @@ alias lyrapush="$CFG_BASH $LYRA_PROJECT_PATH/lyrapush.sh"
 alias lyragit='t_lyragit(){repolyra cmd "git $*" ; }; t_lyragit'
 alias lyrapull="repolyra cmd "git pull $1 $2 $3 $4""
 alias lyrapush="repolyra cmd "git push $1 $2 $3 $4""
+
+#lyra
+alias fswx='_gfile(){ grep -E "doEngine: message -> " $* }; _gfile $*'
