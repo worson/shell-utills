@@ -6,11 +6,14 @@ source "$CFG_PLUGIN_PATH/adb/adb-sh.sh"
 
 source "$CFG_PLUGIN_PATH/docker/docker-shot.sh"
 
-# Android
+# Android cmd
 source $CFG_PLUGIN_PATH/android_cmd/android-shot.sh
+
 
 #
 source $CFG_PLUGIN_PATH/android_log/log_utils.sh
+
+
 
 
 G_CUSTOM_PATH="$CFG_PLUGIN_PATH/android_cmd"
