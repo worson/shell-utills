@@ -6,4 +6,4 @@ echo $t_file
 touch  $t_file
 # sh adblogcat.sh $t_file
 adb logcat -v threadtime > $t_file
-vim $t_file
+# vim $t_file

@@ -14,6 +14,8 @@ alias fsi='_gfile(){ grep -iE $2 $1 }; _gfile $1 $2'
 alias fsv='_gfile(){ grep -vE $2 $1 }; _gfile $1 $2'
 alias fsl='_gfile(){ grep -nE $2 $1 }; _gfile $1 $2'
 alias fsab='_gfile(){ grep -A 8 -B 8 -iE $2 $1 }; _gfile $1 $2'
+alias fsexception='_gfile(){ grep -E "exception|Exception" $* }; _gfile $*'
+
 # alias g=	git
 # alias h= 	历史记录
 alias hc="fc -l -n 1 | grep  $*"
