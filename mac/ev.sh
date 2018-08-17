@@ -4,8 +4,9 @@ export G_LRAY_BLOCK_PATH=$LRAY_ROOT_PATH"/blocks"
 export G_LRAY_BUILD_PATH=$LRAY_ROOT_PATH"/tools/build/"
 
 VIM_PATH="/Applications/MacVim.app/Contents/bin"
+PROTOC_PATH="/Users/wangshengxing/project/tools/protoc-3.6.0-osx-x86_64/bin"
 
-PATH=$PATH:$VIM_PATH
+PATH=$PATH:$VIM_PATH:$PROTOC_PATH
 
 export EDITOR=vim
 

@@ -2,6 +2,8 @@
 sourcepath="/Users/wangshengxing/tool/shell-config"
 CFG_ROOT_PATH=$sourcepath
 
+SH=zsh
+export SH
 
 #source  $sourcepath/wine-app.sh
 # common
