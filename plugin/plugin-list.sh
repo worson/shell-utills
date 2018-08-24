@@ -13,6 +13,7 @@ source $CFG_PLUGIN_PATH/android_cmd/android-shot.sh
 #
 source $CFG_PLUGIN_PATH/android_log/log_utils.sh
 
+alias ascreen="sh $CFG_PLUGIN_PATH/android_screen/android_screen.sh"
 
 
 
@@ -20,3 +21,5 @@ G_CUSTOM_PATH="$CFG_PLUGIN_PATH/android_cmd"
 G_CUSTOM_PATH=$G_CUSTOM_PATH:"$PLUGIN_PATH/ssh_cmd"
 
 PATH=$PATH:$G_CUSTOM_PATH
+
+

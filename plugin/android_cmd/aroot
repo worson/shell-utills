@@ -1,4 +1,5 @@
 adb root
 adb shell sync
-adb adb wait-for-device
+sleep 1
+#adb adb wait-for-device
 adb remount
