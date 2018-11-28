@@ -14,6 +14,10 @@ source $CFG_PLUGIN_PATH/android_cmd/android-shot.sh
 source $CFG_PLUGIN_PATH/android_log/log_utils.sh
 
 alias ascreen="sh $CFG_PLUGIN_PATH/android_screen/android_screen.sh"
+alias apktool="sh $CFG_PLUGIN_PATH/apk_tool/apktool"
+alias dex2jar="sh $CFG_PLUGIN_PATH/dex2jar/d2j-dex2jar.sh"
+
+alias asign="sh $CFG_PLUGIN_PATH/apk_sign/asign.sh"
 
 
 

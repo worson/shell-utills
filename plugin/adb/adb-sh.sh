@@ -31,6 +31,9 @@ alias apl="adb shell pm -l"
 alias aplr="adb shell pm -l | grep "
 alias app="adb shell pm -p"
 
+#设备信息相关
+alias aserial="adb get-serialno"
+
 #事件输入相关
 alias aback="adb shell input keyevent 4"
 alias ahome="adb shell input keyevent 3"
@@ -39,6 +42,9 @@ alias atxt="adb shell input text "
 
 # 显示应用信息
 alias apkinfo="aapt dump badging "
+
+#app
+alias appsetting="adb shell am start com.android.settings/com.android.settings.Settings"
 
 # aispeech
 alias swake="adb shell am broadcast -a aios.intent.action.UI_MIC_CLICK"
