@@ -13,11 +13,14 @@ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn #国内用户需�
 
 ANDROID_HOME="/Users/Shared/ShareLib/Android/sdk/"
 ANDROID_TOOL_PATH="/Users/Shared/ShareLib/Android/sdk/platform-tools"
+MONGO_DB_PATH="/Applications/MongoDB.app/Contents/Resources/Vendor/mongodb/bin"
 
-
-PATH=$PATH:$VIM_PATH:$PROTOC_PATH:$ANDROID_TOOL_PATH:$FLUTTER_PATH:$MYSQL_PATH
+PATH=$PATH:$VIM_PATH:$PROTOC_PATH:$ANDROID_TOOL_PATH:$FLUTTER_PATH:$MYSQL_PATH:$MONGO_DB_PATH
 
 export EDITOR=vim
+
+#x export
+export X_GRADLE_PATH=/Users/wangshengxing/tool/gradle/gradle-5.6.4/bin/gradle
 
 T_MAC_PATH=$CFG_ROOT_PATH'/mac/'
 

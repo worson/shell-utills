@@ -20,10 +20,13 @@ alias dex2jar="sh $CFG_PLUGIN_PATH/dex2jar/d2j-dex2jar.sh"
 
 alias asign="sh $CFG_PLUGIN_PATH/apk_sign/asign.sh"
 
+G_UI_PATH="$CFG_PLUGIN_PATH/ui"
 
 
 G_CUSTOM_PATH="$CFG_PLUGIN_PATH/android_cmd":"$CFG_PLUGIN_PATH:aosp"
-G_CUSTOM_PATH=$G_CUSTOM_PATH:"$PLUGIN_PATH/ssh_cmd"
+G_CUSTOM_PATH=$G_CUSTOM_PATH:"$PLUGIN_PATH/ssh_cmd":$G_UI_PATH
+
+
 
 PATH=$PATH:$G_CUSTOM_PATH
 
