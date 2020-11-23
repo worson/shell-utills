@@ -1,3 +1,4 @@
 adb root
 adb shell sync
+adb adb wait-for-device
 adb remount
