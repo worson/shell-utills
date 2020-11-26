@@ -13,6 +13,7 @@ alias ain="adb install "
 alias aun="adb uninstall "
 alias als="adb shell ls "
 alias arm="adb shell rm "
+alias atouch="adb shell touch "
 alias amv="adb shell mv "
 alias amkdir="adb shell mkdir "
 alias as="adb shell "
@@ -20,6 +21,8 @@ alias ash="adb shell "
 alias aas="adb shell am start -n "
 alias abc="adb shell am broadcast -a "
 alias aping="adb shell ping www.baidu.com"
+alias abm="adb shell bmgr"
+alias abackup="adb shell bmgr backup "
 
 alias atop="adb shell top"
 alias aps="adb shell ps"
@@ -31,14 +34,24 @@ alias apl="adb shell pm -l"
 alias aplr="adb shell pm -l | grep "
 alias app="adb shell pm -p"
 
+
+#设备信息相关
+alias aserial="adb get-serialno"
+alias asn="adb get-serialno"
+alias awindow="adb shell dumpsys window w | grep \/  |  grep name="
+
+
 #事件输入相关
-alias aback="adb shell input keyevent 3"
-alias ahome="adb shell input keyevent 4"
+alias aback="adb shell input keyevent 4"
+alias ahome="adb shell input keyevent 3"
 alias akey="adb shell input keyevent "
 alias atxt="adb shell input text "
 
 # 显示应用信息
 alias apkinfo="aapt dump badging "
+
+#app
+alias appsetting="adb shell am start com.android.settings/com.android.settings.Settings"
 
 # aispeech
 alias swake="adb shell am broadcast -a aios.intent.action.UI_MIC_CLICK"
