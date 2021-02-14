@@ -1,5 +1,5 @@
 #!/bin/bash
-sourcepath="/Users/wangshengxing/tool/shell-config"
+sourcepath="/Users/wangshengxing/project/mygithub/shell-utills"
 CFG_ROOT_PATH=$sourcepath
 
 SH=zsh
@@ -11,3 +11,6 @@ source  $sourcepath/source-list.sh
 source  $sourcepath/mac/ev.sh
 
 export CFG_ROOT_PATH
+
+
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh

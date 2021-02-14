@@ -1,7 +1,7 @@
 alias a="alias "
 alias b="pbcopy"
 alias bd=". bd -si"
-alias c="ccat"
+alias c="cat"
 alias cl="clear"
 #alias d=	当前工作目录
 alias e="echo"

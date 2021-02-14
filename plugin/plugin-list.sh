@@ -6,6 +6,8 @@ source "$CFG_PLUGIN_PATH/adb/adb-sh.sh"
 
 source "$CFG_PLUGIN_PATH/docker/docker-shot.sh"
 
+source "$CFG_PLUGIN_PATH/java_env/java_env.sh"
+
 # Android cmd
 source $CFG_PLUGIN_PATH/android_cmd/android-shot.sh
 
