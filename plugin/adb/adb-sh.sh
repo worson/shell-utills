@@ -65,3 +65,6 @@ alias sbridge="adb shell am start com.aispeech.aios.bridge/.activity.MainActivit
 
 # tool
 alias np="wine /Users/wangshengxing/tool/wine/npp.7.3.3.bin/notepad++.exe "
+
+# 屏幕相关
+alias afrontactivity2="adb shell dumpsys activity top | grep ACTIVITY"
